@@ -4,7 +4,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## -----------------------------------------------------------------------------
+## ----lib----------------------------------------------------------------------
 library(SDPDmod)
 
 ## ----data, eval=TRUE, echo=T, warning=FALSE, message=FALSE--------------------
@@ -55,7 +55,8 @@ d2 <- plm::pdata.frame(data1, index=c('state', 'year'))
 d2$llogc<-plm::lag(d2$logc) ## add lagged variable
 data2<-d2[which(!is.na(d2$llogc)),]
 rownames(data2)<-1:nrow(data2)
-kk<-which(colnames(data2)=="llogc"); kk
+kk<-which(colnames(data2)=="llogc")
+kk
 
 res5<-blmpSDPD(formula = logc ~ logp+logy, data = data2, W = W,
                index = c("state","year"),
@@ -73,8 +74,9 @@ mod1<-SDPDm(formula = logc ~ logp+logy, data = data1, W = W,
             effect = "individual")
 summary(mod1)
 mod1$rsqr
+mod1$sige
 
-## ---- eval=TRUE, echo=T, warning=FALSE, message=FALSE-------------------------
+## ----mod2, eval=TRUE, echo=T, warning=FALSE, message=FALSE--------------------
 mod2<-SDPDm(formula = logc ~ logp+logy, data = data1, W = W,
             index = c("state","year"),
             model = "sar", 
@@ -83,7 +85,7 @@ mod2<-SDPDm(formula = logc ~ logp+logy, data = data1, W = W,
             tlaginfo = list(ind = NULL, tl = T, stl = T))
 summary(mod2)
 
-## ---- eval=TRUE, echo=T, warning=FALSE, message=FALSE-------------------------
+## ----mod3, eval=TRUE, echo=T, warning=FALSE, message=FALSE--------------------
 mod3<-SDPDm(formula = logc ~ logp+logy, data = data1, W = W,
             index = c("state","year"),
             model = "sar", 
@@ -93,17 +95,17 @@ mod3<-SDPDm(formula = logc ~ logp+logy, data = data1, W = W,
             tlaginfo = list(ind = NULL, tl = T, stl = T))
 summary(mod3)
 
-## ---- eval=TRUE, echo=T, warning=FALSE, message=FALSE-------------------------
+## ----mod4, eval=TRUE, echo=T, warning=FALSE, message=FALSE--------------------
 mod4<-SDPDm(formula = logc ~ logp+logy, data = data2, W = W,
             index = c("state","year"),
-            model = "sar", 
+            model = "sar",
             effect = "individual",
             LYtrans = T,
             dynamic = T,
             tlaginfo = list(ind = kk, tl = T, stl = F))
 summary(mod4)
 
-## ---- eval=TRUE, echo=T, warning=FALSE, message=FALSE-------------------------
+## ----mod5, eval=TRUE, echo=T, warning=FALSE, message=FALSE--------------------
 mod5<-SDPDm(formula = logc ~ logp+logy, data = data1, W = W,
             index = c("state","year"),
             model = "sdm", 
@@ -113,7 +115,7 @@ mod5<-SDPDm(formula = logc ~ logp+logy, data = data1, W = W,
             tlaginfo = list(ind = NULL, tl = T, stl = T))
 summary(mod5)
 
-## ---- eval=TRUE, echo=T, warning=FALSE, message=FALSE-------------------------
+## ----imp, eval=TRUE, echo=T, warning=FALSE, message=FALSE---------------------
 imp  <- impactsSDPDm(mod5)
-imp
+summary(imp)
 

@@ -29,29 +29,43 @@ data(gN3dist, package = "SDPDmod")
     W_knn <- mNearestN(distMat = gN3dist, m = 5) ## 5 nearest neighbors
 
 ## -----------------------------------------------------------------------------
-    W_inv1 <- InvDistMat(distMat = gN3dist) ## inverse distance no cut-off
-    W_inv2 <- InvDistMat(distMat = gN3dist, distCutOff = 100000) ## inverse distance with cut-off 100000 meters
+    ## inverse distance no cut-off
+    W_inv1 <- InvDistMat(distMat = gN3dist) 
+    ## inverse distance with cut-off 100000 meters
+    W_inv2 <- InvDistMat(distMat = gN3dist, distCutOff = 100000) 
     gN3dist2 <- gN3dist/1000 ## convert to kilometers
-    W_inv3 <- InvDistMat(distMat = gN3dist2, distCutOff = 100) ## inverse distance with cut-off 100 km 
-    W_inv4 <- InvDistMat(gN3dist2, 200, powr = 2) ## inverse distance with cut-off 200km and exponent 2
+    ## inverse distance with cut-off 100 km
+    W_inv3 <- InvDistMat(distMat = gN3dist2, distCutOff = 100)  
+    ## inverse distance with cut-off 200km and exponent 2
+    W_inv4 <- InvDistMat(gN3dist2, 200, powr = 2) 
 
 ## -----------------------------------------------------------------------------
-    W_exp1 <- ExpDistMat(distMat = gN3dist) ## Exponential distance no cut-off
-    W_exp2 <- ExpDistMat(distMat = gN3dist, distCutOff = 100000) ## Exponential distance with cut-off 100000 meters
+    ## Exponential distance no cut-off
+    W_exp1 <- ExpDistMat(distMat = gN3dist) 
+    ## Exponential distance with cut-off 100000 meters
+    W_exp2 <- ExpDistMat(distMat = gN3dist, distCutOff = 100000) 
     gN3dist2 <- gN3dist/1000 ## convert to kilometers
-    W_exp3 <- ExpDistMat(gN3dist2, 100) ## Exponential distance with cut-off 100 km 
-    W_exp4 <- DistWMat(gN3dist2, 100, type = "expo") ## Exponential distance with cut-off 100 km
+    ## Exponential distance with cut-off 100 km 
+    W_exp3 <- ExpDistMat(gN3dist2, 100) 
+    ## Exponential distance with cut-off 100 km
+    W_exp4 <- DistWMat(gN3dist2, 100, type = "expo") 
     all(W_exp3==W_exp4)
-    W_exp5 <- ExpDistMat(gN3dist2, 200, expn = 0.001) ## Exponential distance with cut-off 200 km and exponent 0.001
+    ## Exponential distance with cut-off 200 km and exponent 0.001
+    W_exp5 <- ExpDistMat(gN3dist2, 200, expn = 0.001) 
 
 ## -----------------------------------------------------------------------------
-    W_dd1 <- DDistMat(distMat = gN3dist) ## Double-Power distance no cut-off, exponent 2
-    W_dd2 <- DDistMat(distMat = gN3dist, distCutOff=100000) ## Double-Power distance with cut-off 100000 meters, exponent 2
+    ## Double-Power distance no cut-off, exponent 2
+    W_dd1 <- DDistMat(distMat = gN3dist) 
+    ## Double-Power distance with cut-off 100000 meters, exponent 2
+    W_dd2 <- DDistMat(distMat = gN3dist, distCutOff=100000) 
     gN3dist2 <- gN3dist/1000 ## convert to kilometers
-    W_dd3 <- DDistMat(gN3dist2, 100) ## Double-Power distance with cut-off 100 km 
-    W_dd4 <- DistWMat(gN3dist2, 100, type = "doubled") ## Double-Power distance with cut-off 100 km
+    ## Double-Power distance with cut-off 100 km 
+    W_dd3 <- DDistMat(gN3dist2, 100) 
+    ## Double-Power distance with cut-off 100 km
+    W_dd4 <- DistWMat(gN3dist2, 100, type = "doubled") 
     all(W_dd3==W_dd4) 
-    W_dd5 <- DDistMat(gN3dist2, 200, powr = 3) ## Double-Power distance with cut-off 200km and exponent 3
+    ## Double-Power distance with cut-off 200km and exponent 3
+    W_dd5 <- DDistMat(gN3dist2, 200, powr = 3) 
 
 ## -----------------------------------------------------------------------------
    W_2n_norm <- mOrdNbr(sf_pol = ger, m = 2, rn = T) ## second order neighbors
