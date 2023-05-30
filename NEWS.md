@@ -1,3 +1,7 @@
+# SDPDmod 0.0.3
+
+* SDPDm - p-values for spatial dynamic model updated.
+
 # SDPDmod 0.0.2
 
 * summary.impactsSDPDm added.

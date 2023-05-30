@@ -1,11 +1,11 @@
-ae1b45a9f634845ae6a92fb3f567321d *DESCRIPTION
+a5b1ccb07495e38a7dc836e9f2998ed3 *DESCRIPTION
 0a3398de58097f6e5cbdc72a4ad4f1bd *NAMESPACE
-e8bd886150dfce6e6348a63db907f4ed *NEWS.md
+87908b7a5e1066852bc3c658cd25a08b *NEWS.md
 694520f2e651fb324320432d6730078c *R/DDistMat.R
 fa0353b6294e460964082effcef102dd *R/DistWMat.R
 a64a7ec2268c4868bb74bb91ceff1e76 *R/ExpDistMat.R
 a9ed61ccae0cf84ea671cb2f4ef2120c *R/InvDistMat.R
-6d7eb91af19079d3c12af7956f8aa683 *R/SDPDm.R
+df047e0d38199dcf46a3571ad04677ec *R/SDPDm.R
 c1a508072b223183a7387a51197eddc2 *R/SIG_OMG.R
 cffcd9021c50e7e1acfc1089e3c6c93c *R/SharedBMat.R
 68ecc214f0420e915765c4d9d440dc7a *R/betaprior.R
@@ -24,7 +24,7 @@ defb9594b09105dc36df92adb8af159b *R/rownor.R
 c44515a38c4bcc1e00799717e8202ca5 *R/summary.SDPDm.R
 fe9f264d941ecc30fbff4e91b197fb4d *R/summary.impactsSDPDm.R
 5ac676b9ad874a161c19ed2abc80eade *R/usa46.R
-0dec008642001c0a16de5067f2cbdc06 *build/vignette.rds
+e6a18f32e6b83f3f752b6792bd788e31 *build/vignette.rds
 f9fb4849a9f9a504617a7cdcbf0f715d *data/gN3dist.rda
 8d0a8298f4b5c5945ce7576385913d71 *data/usa46.rda
 d1164f891605cfee7f2d9353a26ba488 *inst/doc/spatial_matrices.R
@@ -32,7 +32,7 @@ c3b987496476dd70a452ffdc5ccb1b68 *inst/doc/spatial_matrices.Rmd
 208ab49036348390d2e26a9cef056b24 *inst/doc/spatial_matrices.html
 9babadfbe472d365d8e8f6f000ec3920 *inst/doc/spatial_model.R
 372eb822ed736a9a7e8a1639b6a0f4cc *inst/doc/spatial_model.Rmd
-ecf32542ee77eb17c3bc573082e2c4e6 *inst/doc/spatial_model.html
+f582ea26acbe2b6c6085c3b0de696e82 *inst/doc/spatial_model.html
 9ec9694a9701b5de491486601d0ccebd *inst/shape/GermanyNUTS3.dbf
 7c849dbcded8d2b96e74ba0b39364875 *inst/shape/GermanyNUTS3.prj
 69d99318dc5e5cdf0c7a513bda358faf *inst/shape/GermanyNUTS3.shp
