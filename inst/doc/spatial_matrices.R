@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -7,7 +7,7 @@ knitr::opts_chunk$set(
 ## ----setup--------------------------------------------------------------------
 library(SDPDmod)
 
-## ---- eval=T, echo=T, warning=FALSE, message=FALSE, results='hide'------------
+## ----eval=T, echo=T, warning=FALSE, message=FALSE, results='hide'-------------
 library("sf")
 ger <- st_read(system.file(dsn = "shape/GermanyNUTS3.shp",
                          package = "SDPDmod"))
