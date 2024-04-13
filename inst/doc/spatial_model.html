@@ -462,13 +462,9 @@ to “individual”.</p>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>               <span class="at">model =</span> <span class="fu">list</span>(<span class="st">&quot;ols&quot;</span>,<span class="st">&quot;sar&quot;</span>,<span class="st">&quot;sdm&quot;</span>,<span class="st">&quot;sem&quot;</span>,<span class="st">&quot;sdem&quot;</span>,<span class="st">&quot;slx&quot;</span>), </span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>               <span class="at">effect =</span> <span class="st">&quot;individual&quot;</span>)</span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>res1</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; $lmarginal</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;        ols      sar      sdm     sem     sdem      slx</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 1 884.7551 938.6934 1046.487 993.192 1039.671 930.0585</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; $probs</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt;            ols          sar       sdm          sem        sdem          slx</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; 1 5.758883e-71 1.532623e-47 0.9989053 7.142836e-24 0.001094712 2.724974e-51</span></span></code></pre></div>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;                    ols      sar       sdm     sem      sdem      slx</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; Log marginals 884.7551 938.6934 1046.4868 993.192 1039.6707 930.0585</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; Model probs     0.0000   0.0000    0.9989   0.000    0.0011   0.0000</span></span></code></pre></div>
 </div>
 <div id="static-panel-model-with-time-fixed-effects" class="section level2">
 <h2>Static panel model with time fixed effects</h2>
@@ -554,9 +550,9 @@ where the lagged dependent variable is included in the data</h2>
 <div id="dynamic-spatial-lag-model-with-spatial-fixed-effects" class="section level2">
 <h2>Dynamic spatial lag model with spatial fixed effects</h2>
 <p><code>dynamic</code> should be set to TRUE as well as the option
-<code>stl</code> in <code>tlaginfo</code> for inclusion of time lag. For
-space-time lag effect the option <code>stl</code> in
-<code>tlaginfo</code> should also be set to TRUE</p>
+<code>tl</code> in <code>tlaginfo</code> for inclusion of time lag. For
+space-time lag effect, the option <code>stl</code> in
+<code>tlaginfo</code> should also be set to TRUE.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>mod2<span class="ot">&lt;-</span><span class="fu">SDPDm</span>(<span class="at">formula =</span> logc <span class="sc">~</span> logp<span class="sc">+</span>logy, <span class="at">data =</span> data1, <span class="at">W =</span> W,</span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>            <span class="at">index =</span> <span class="fu">c</span>(<span class="st">&quot;state&quot;</span>,<span class="st">&quot;year&quot;</span>),</span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>            <span class="at">model =</span> <span class="st">&quot;sar&quot;</span>, </span>

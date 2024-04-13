@@ -8,7 +8,7 @@
 #' @param W spatial weights matrix
 #' @param index the indexes (Names of the variables for the spatial and time component. The spatial is first and the time second.)
 #' @param model a models to be calculated, c("sar","sdm"), default = "sar"
-#' @param effect type of fixed effects, c("none","individual","time","twoways"), default ="none"
+#' @param effect type of fixed effects, c("none","individual","time","twoways"), default ="individual"
 #' @param ldet type of computation of log-determinant, c("full","mc"). Default "full" for smaller problems, "mc" for large problems.
 #' @param lndetspec specifications for the calculation of the log-determinant for mcmc calculation. Default list(p=NULL,m=NULL,sd=NULL), if the number of spatial units is >1000 then list(p=30,m=30,sd=12345)
 #' @param dynamic logical, if TRUE time lag of the dependent variable is included. Default = FALSE
@@ -22,13 +22,17 @@
 #' @details
 #' Based on MatLab functions sar_jihai.m, sar_jihai_time.m and sar_panel_FE.m
 #'
-#'  In \emph{tlaginfo = list(ind = NULL, tl = FALSE, stl = FALSE)}:
+#'In \emph{tlaginfo = list(ind = NULL, tl = TRUE, stl = TRUE)}:
 #'
-#' \emph{ind} i-th column in \emph{data} which represents the time lag
+#' \emph{ind} i-th column in \emph{data} which represents the time lag, 
+#' if not specified then the lag from the dependent variable is created and the 
+#' panel is reduced from n*t to n*(t-1)
 #'
-#' \emph{tl} logical, default FALSE. If TRUE \eqn{y_{t-1}} (the lagged dependent variable in time is included)
+#' \emph{tl} logical, default TRUE. If TRUE \eqn{y_{t-1}} 
+#' (the lagged dependent variable in time is included)
 #'
-#' \emph{stl} logical, default FALSE. If TRUE \eqn{Wy_{t-1}} (the lagged dependent variable in space and time is included)
+#' \emph{stl} logical, default TRUE. If TRUE \eqn{Wy_{t-1}} 
+#' (the lagged dependent variable in space and time is included)
 #'
 #' @returns An object of class "SDPDm"
 #' \item{coefficients}{coefficients estimate of the model parameters (\emph{coefficients1} for dynamic model)}
@@ -71,10 +75,12 @@
 #'
 #' @export
 
-SDPDm<-function(formula, data, W, index, model, effect,
+
+SDPDm<-function(formula, data, W, index, 
+                model = "sar", effect = "individual",
                 ldet = NULL, lndetspec=list(p=NULL,m=NULL,sd=NULL),
                 dynamic = FALSE,
-                tlaginfo = list(ind = NULL,tl = FALSE,stl = FALSE),
+                tlaginfo = list(ind = NULL,tl = TRUE,stl = TRUE),
                 LYtrans = FALSE,
                 incr = NULL, rintrv = TRUE,
                 demn = FALSE, DIRtrans = FALSE)
@@ -120,10 +126,17 @@ SDPDm<-function(formula, data, W, index, model, effect,
   ###stop if unbalanced panel
   if (!balanced) stop("Estimation method unavailable for unbalanced panels!")
 
-  if(is.null(effect)){ effect<-"none"
+  if(is.null(effect)){ effect<-"individual"
   }else if(!is.null(effect) & !(effect %in%
                                 c("none","individual","time","twoways"))) {
     stop("Wrong fixed effects entered!")}
+  
+  if(!is.null(model)){
+    if(!(model %in% c("sar","sdm"))){
+      stop("Wrong model entered! 
+           Enter 'sar' for spatial autoregressive model or 'sdm' for spatial Durbin model!")
+    }
+  }
 
   if(dynamic){
     if(!is.null(tlaginfo$ind)){
