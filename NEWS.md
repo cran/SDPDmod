@@ -1,3 +1,7 @@
+# SDPDmod 0.0.6
+
+* Default value in SDPDm for LYtrans changed from FALSE to TRUE.
+
 # SDPDmod 0.0.5
 
 * Default values in tlaginfo for tl and stl changed from FALSE to TRUE.
