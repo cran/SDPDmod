@@ -1,3 +1,7 @@
+# SDPDmod 0.0.7
+
+* Typo correction of residuals in SDPDm.
+
 # SDPDmod 0.0.6
 
 * Default value in SDPDm for LYtrans changed from FALSE to TRUE.

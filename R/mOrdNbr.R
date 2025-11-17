@@ -22,8 +22,7 @@
 #' @examples
 #' library("sf")
 #' ger   <- st_read(system.file("shape/GermanyNUTS3.shp",
-#'                              package = "SDPDmod"),
-#'                  quiet = TRUE)
+#'                              package = "SDPDmod"))
 #' m1thn <- mOrdNbr(ger)
 #' \donttest{
 #' m4thn <- mOrdNbr(ger, 4)

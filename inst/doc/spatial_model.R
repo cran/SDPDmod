@@ -71,8 +71,7 @@ res5<-blmpSDPD(formula = logc ~ logp+logy, data = data2, W = W,
 mod1<-SDPDm(formula = logc ~ logp+logy, data = data1, W = W,
             index = c("state","year"),
             model = "sar", 
-            effect = "individual",
-            LYtrans = FALSE)
+            effect = "individual")
 summary(mod1)
 mod1$rsqr
 mod1$sige
@@ -82,7 +81,6 @@ mod2<-SDPDm(formula = logc ~ logp+logy, data = data1, W = W,
             index = c("state","year"),
             model = "sar", 
             effect = "individual",
-            LYtrans = F,
             dynamic = T,
             tlaginfo = list(ind = NULL, tl = T, stl = T))
 summary(mod2)

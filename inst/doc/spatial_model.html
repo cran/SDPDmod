@@ -48,8 +48,9 @@ overflow: visible;
 }
 </style>
 <style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,7 +61,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -524,30 +525,29 @@ where the lagged dependent variable is included in the data</h2>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>mod1<span class="ot">&lt;-</span><span class="fu">SDPDm</span>(<span class="at">formula =</span> logc <span class="sc">~</span> logp<span class="sc">+</span>logy, <span class="at">data =</span> data1, <span class="at">W =</span> W,</span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>            <span class="at">index =</span> <span class="fu">c</span>(<span class="st">&quot;state&quot;</span>,<span class="st">&quot;year&quot;</span>),</span>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>            <span class="at">model =</span> <span class="st">&quot;sar&quot;</span>, </span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>            <span class="at">effect =</span> <span class="st">&quot;individual&quot;</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>            <span class="at">LYtrans =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; sar panel model with individual fixed effects</span></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; Call:</span></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt; SDPDm(formula = logc ~ logp + logy, data = data1, W = W, index = c(&quot;state&quot;, </span></span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt;     &quot;year&quot;), model = &quot;sar&quot;, effect = &quot;individual&quot;, LYtrans = FALSE)</span></span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; Spatial autoregressive coefficient:</span></span>
-<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt;     Estimate Std. Error t-value  Pr(&gt;|t|)    </span></span>
-<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; rho 0.297576   0.028444  10.462 &lt; 2.2e-16 ***</span></span>
-<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; Coefficients:</span></span>
-<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">#&gt;        Estimate Std. Error  t-value Pr(&gt;|t|)    </span></span>
-<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="co">#&gt; logp -0.5320053  0.0254445 -20.9085   &lt;2e-16 ***</span></span>
-<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="co">#&gt; logy -0.0007088  0.0152139  -0.0466   0.9628    </span></span>
-<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="co">#&gt; ---</span></span>
-<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></span>
-<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a>mod1<span class="sc">$</span>rsqr</span>
-<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="co">#&gt; [1] 0.8677243</span></span>
-<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a>mod1<span class="sc">$</span>sige</span>
-<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a><span class="co">#&gt;        sige </span></span>
-<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a><span class="co">#&gt; 0.006667779</span></span></code></pre></div>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>            <span class="at">effect =</span> <span class="st">&quot;individual&quot;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; sar panel model with individual fixed effects</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; Call:</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; SDPDm(formula = logc ~ logp + logy, data = data1, W = W, index = c(&quot;state&quot;, </span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt;     &quot;year&quot;), model = &quot;sar&quot;, effect = &quot;individual&quot;)</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; Spatial autoregressive coefficient:</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt;     Estimate Std. Error t-value  Pr(&gt;|t|)    </span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; rho 0.297576   0.028444  10.462 &lt; 2.2e-16 ***</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; Coefficients:</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt;        Estimate Std. Error  t-value Pr(&gt;|t|)    </span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">#&gt; logp -0.5320053  0.0254445 -20.9085   &lt;2e-16 ***</span></span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="co">#&gt; logy -0.0007088  0.0152139  -0.0466   0.9628    </span></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="co">#&gt; ---</span></span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a>mod1<span class="sc">$</span>rsqr</span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="co">#&gt; [1] 0.8677243</span></span>
+<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a>mod1<span class="sc">$</span>sige</span>
+<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="co">#&gt;        sige </span></span>
+<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a><span class="co">#&gt; 0.006667779</span></span></code></pre></div>
 </div>
 <div id="dynamic-spatial-lag-model-with-spatial-fixed-effects" class="section level2">
 <h2>Dynamic spatial lag model with spatial fixed effects</h2>
@@ -559,29 +559,28 @@ space-time lag effect, the option <code>stl</code> in
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>            <span class="at">index =</span> <span class="fu">c</span>(<span class="st">&quot;state&quot;</span>,<span class="st">&quot;year&quot;</span>),</span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>            <span class="at">model =</span> <span class="st">&quot;sar&quot;</span>, </span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>            <span class="at">effect =</span> <span class="st">&quot;individual&quot;</span>,</span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>            <span class="at">LYtrans =</span> F,</span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>            <span class="at">dynamic =</span> T,</span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>            <span class="at">tlaginfo =</span> <span class="fu">list</span>(<span class="at">ind =</span> <span class="cn">NULL</span>, <span class="at">tl =</span> T, <span class="at">stl =</span> T))</span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="fu">summary</span>(mod2)</span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co">#&gt; sar dynamic panel model with individual fixed effects</span></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co">#&gt; Call:</span></span>
-<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="co">#&gt; SDPDm(formula = logc ~ logp + logy, data = data1, W = W, index = c(&quot;state&quot;, </span></span>
-<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co">#&gt;     &quot;year&quot;), model = &quot;sar&quot;, effect = &quot;individual&quot;, dynamic = T, </span></span>
-<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a><span class="co">#&gt;     tlaginfo = list(ind = NULL, tl = T, stl = T), LYtrans = F)</span></span>
-<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a><span class="co">#&gt; Spatial autoregressive coefficient:</span></span>
-<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a><span class="co">#&gt;     Estimate Std. Error t-value  Pr(&gt;|t|)    </span></span>
-<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a><span class="co">#&gt; rho 0.305592   0.031396  9.7334 &lt; 2.2e-16 ***</span></span>
-<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a><span class="co">#&gt; Coefficients:</span></span>
-<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a><span class="co">#&gt;               Estimate Std. Error t-value Pr(&gt;|t|)    </span></span>
-<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a><span class="co">#&gt; logc(t-1)    0.8697327  0.0130098 66.8520  &lt; 2e-16 ***</span></span>
-<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a><span class="co">#&gt; W*logc(t-1) -0.2796636  0.0336333 -8.3151  &lt; 2e-16 ***</span></span>
-<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a><span class="co">#&gt; logp        -0.1147081  0.0138649 -8.2733  &lt; 2e-16 ***</span></span>
-<span id="cb9-25"><a href="#cb9-25" tabindex="-1"></a><span class="co">#&gt; logy        -0.0206479  0.0079911 -2.5839  0.00977 ** </span></span>
-<span id="cb9-26"><a href="#cb9-26" tabindex="-1"></a><span class="co">#&gt; ---</span></span>
-<span id="cb9-27"><a href="#cb9-27" tabindex="-1"></a><span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></span></code></pre></div>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>            <span class="at">dynamic =</span> T,</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>            <span class="at">tlaginfo =</span> <span class="fu">list</span>(<span class="at">ind =</span> <span class="cn">NULL</span>, <span class="at">tl =</span> T, <span class="at">stl =</span> T))</span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="fu">summary</span>(mod2)</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="co">#&gt; sar dynamic panel model with individual fixed effects</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">#&gt; Call:</span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co">#&gt; SDPDm(formula = logc ~ logp + logy, data = data1, W = W, index = c(&quot;state&quot;, </span></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="co">#&gt;     &quot;year&quot;), model = &quot;sar&quot;, effect = &quot;individual&quot;, dynamic = T, </span></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co">#&gt;     tlaginfo = list(ind = NULL, tl = T, stl = T))</span></span>
+<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a><span class="co">#&gt; Spatial autoregressive coefficient:</span></span>
+<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a><span class="co">#&gt;     Estimate Std. Error t-value  Pr(&gt;|t|)    </span></span>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a><span class="co">#&gt; rho 0.305592   0.031396  9.7334 &lt; 2.2e-16 ***</span></span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a><span class="co">#&gt; Coefficients:</span></span>
+<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a><span class="co">#&gt;               Estimate Std. Error t-value Pr(&gt;|t|)    </span></span>
+<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a><span class="co">#&gt; logc(t-1)    0.8697327  0.0130098 66.8520  &lt; 2e-16 ***</span></span>
+<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a><span class="co">#&gt; W*logc(t-1) -0.2796636  0.0336333 -8.3151  &lt; 2e-16 ***</span></span>
+<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a><span class="co">#&gt; logp        -0.1147081  0.0138649 -8.2733  &lt; 2e-16 ***</span></span>
+<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a><span class="co">#&gt; logy        -0.0206479  0.0079911 -2.5839  0.00977 ** </span></span>
+<span id="cb9-25"><a href="#cb9-25" tabindex="-1"></a><span class="co">#&gt; ---</span></span>
+<span id="cb9-26"><a href="#cb9-26" tabindex="-1"></a><span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></span></code></pre></div>
 </div>
 <div id="dynamic-spatial-model-with-spatial-fixed-effects-with-lee-yu-transformation" class="section level2">
 <h2>Dynamic spatial model with spatial fixed effects (with Lee-Yu
