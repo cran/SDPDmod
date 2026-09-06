@@ -1,6 +1,6 @@
-a2970f6f29f6692e7bfc5ba60243b86e *DESCRIPTION
-bec0771320675049a18ee171861ecbf6 *NAMESPACE
-079a62d9aa789d244d971f69c6a28d68 *NEWS.md
+e9e82a82bef9e942706b32498112c893 *DESCRIPTION
+5b0d4e994f6cb9590694040693295d78 *NAMESPACE
+6479526a27cd29534aa0dfd8d2281aa3 *NEWS.md
 694520f2e651fb324320432d6730078c *R/DDistMat.R
 fa0353b6294e460964082effcef102dd *R/DistWMat.R
 a64a7ec2268c4868bb74bb91ceff1e76 *R/ExpDistMat.R
@@ -10,13 +10,13 @@ c1a508072b223183a7387a51197eddc2 *R/SIG_OMG.R
 cffcd9021c50e7e1acfc1089e3c6c93c *R/SharedBMat.R
 68ecc214f0420e915765c4d9d440dc7a *R/betaprior.R
 cb7d58e3673ff73f0cebcf9667f2a2f3 *R/blmpSDPD.R
-ce7e66120f94a2378fa3ad549dd7145d *R/coef.SDPDm.R
+253e868fcbef5a3750f754767029d941 *R/coef.SDPDm.R
 5b372764bbebd26f70a59b083a0df888 *R/demeaning.R
 fa3c214072f0f3425f99337e64da279a *R/eignor.R
 9c2295f7272ecdcefeccdeb2f732fc54 *R/feffects.R
 09a875f0de639fbdb605a8120777d81f *R/gN3dist.R
 cb8ef78e34513fdbfd0552f4ab4d1d0e *R/impactsSDPDm.R
-79f0ee416ff573cf7fd245fa5a9687c3 *R/isrownor.R
+75df4acd91804b44f3b6df6f6ea7647d *R/isrownor.R
 04276fcdf26d14f7065a635f18543a1b *R/likelihood.R
 26134921d79c7bd6aa3eb3887f0321c0 *R/logdet.R
 3e498cb1f8e0538e9be6f5b3d5982fad *R/mNearestN.R
@@ -29,7 +29,7 @@ c5b62fb7573b43f889a7d75c6140abd2 *R/print.summary.impactsSDPDm.R
 cc09c081b5dc05698bc9221a215d2228 *R/summary.SDPDm.R
 ceaaec28d61ccc8aa7bfb66fad543d92 *R/summary.impactsSDPDm.R
 5ac676b9ad874a161c19ed2abc80eade *R/usa46.R
-3b5bce77e45534474b794cea28ea9af9 *build/vignette.rds
+90cd8e09a5507d6af674e236801472a6 *build/vignette.rds
 f9fb4849a9f9a504617a7cdcbf0f715d *data/gN3dist.rda
 8d0a8298f4b5c5945ce7576385913d71 *data/usa46.rda
 69601f5d9765fc0a3057b8b635b07f77 *inst/doc/spatial_matrices.R
@@ -37,7 +37,7 @@ c3b987496476dd70a452ffdc5ccb1b68 *inst/doc/spatial_matrices.Rmd
 e5d37523e8ac7cb404e6aa38b4c1a47a *inst/doc/spatial_matrices.html
 9babadfbe472d365d8e8f6f000ec3920 *inst/doc/spatial_model.R
 b96ac1a609c57328e2983a30d8d2a34a *inst/doc/spatial_model.Rmd
-85b7f1168e3c58f3d56ed5261c0ebf97 *inst/doc/spatial_model.html
+f3579a1a52ecc8c871bce079a8d354a3 *inst/doc/spatial_model.html
 9ec9694a9701b5de491486601d0ccebd *inst/shape/GermanyNUTS3.dbf
 7c849dbcded8d2b96e74ba0b39364875 *inst/shape/GermanyNUTS3.prj
 69d99318dc5e5cdf0c7a513bda358faf *inst/shape/GermanyNUTS3.shp
