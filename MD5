@@ -1,6 +1,6 @@
-e9e82a82bef9e942706b32498112c893 *DESCRIPTION
+da8575709678e35c3a4ba8f4aa743a4b *DESCRIPTION
 5b0d4e994f6cb9590694040693295d78 *NAMESPACE
-6479526a27cd29534aa0dfd8d2281aa3 *NEWS.md
+8a8522525bb2efcea2b9452eb1707cf7 *NEWS.md
 694520f2e651fb324320432d6730078c *R/DDistMat.R
 fa0353b6294e460964082effcef102dd *R/DistWMat.R
 a64a7ec2268c4868bb74bb91ceff1e76 *R/ExpDistMat.R
@@ -29,9 +29,10 @@ c5b62fb7573b43f889a7d75c6140abd2 *R/print.summary.impactsSDPDm.R
 cc09c081b5dc05698bc9221a215d2228 *R/summary.SDPDm.R
 ceaaec28d61ccc8aa7bfb66fad543d92 *R/summary.impactsSDPDm.R
 5ac676b9ad874a161c19ed2abc80eade *R/usa46.R
-90cd8e09a5507d6af674e236801472a6 *build/vignette.rds
+78edc636a61f497b50046e63c6fc4630 *build/vignette.rds
 f9fb4849a9f9a504617a7cdcbf0f715d *data/gN3dist.rda
 8d0a8298f4b5c5945ce7576385913d71 *data/usa46.rda
+0a257ea9aa66edbd6c0501ef406d4366 *inst/CITATION
 69601f5d9765fc0a3057b8b635b07f77 *inst/doc/spatial_matrices.R
 c3b987496476dd70a452ffdc5ccb1b68 *inst/doc/spatial_matrices.Rmd
 e5d37523e8ac7cb404e6aa38b4c1a47a *inst/doc/spatial_matrices.html

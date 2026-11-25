@@ -1,6 +1,6 @@
 Package: SDPDmod
 Title: Spatial Dynamic Panel Data Modeling
-Version: 0.0.8
+Version: 0.0.9
 Authors@R: 
     person(given = "Rozeta", family = "Simonovska", email = "simonovska.r@gmail.com", role = c("aut", "cre"))
 Description: Spatial model calculation for static and dynamic panel data models, weights matrix creation and  Bayesian model comparison.
@@ -16,8 +16,8 @@ Encoding: UTF-8
 LazyData: true
 Config/roxygen2/version: 8.1.0
 NeedsCompilation: no
-Packaged: 2026-09-06 17:06:38 UTC; simon
+Packaged: 2026-11-25 13:07:54 UTC; simon
 Author: Rozeta Simonovska [aut, cre]
 Maintainer: Rozeta Simonovska <simonovska.r@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-09-06 17:20:02 UTC
+Date/Publication: 2026-11-25 17:40:03 UTC

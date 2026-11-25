@@ -1,3 +1,7 @@
+# SDPDmod 0.0.9
+
+* Citation update.
+
 # SDPDmod 0.0.8
 
 * Update in isrownor to include tolerance.
